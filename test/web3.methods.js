@@ -18,6 +18,7 @@ describe('web3', function() {
 
         u.propertyExists(web3, 'providers');
         u.propertyExists(web3, 'eth');
+        u.propertyExists(web3, 'quorum');
         u.propertyExists(web3, 'db');
         u.propertyExists(web3, 'shh');
     });

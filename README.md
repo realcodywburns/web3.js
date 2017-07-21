@@ -1,27 +1,15 @@
-# Migration 0.13.0 -> 0.14.0
-
-web3.js version 0.14.0 supports [multiple instances of web3](https://github.com/ethereum/web3.js/issues/297) object.
-To migrate to this version, please follow the guide:
-
-```diff
--var web3 = require('web3');
-+var Web3 = require('web3');
-+var web3 = new Web3();
-```
-
-
-# Ethereum JavaScript API
+# Ethereum & Quorum JavaScript API
 
 [![Join the chat at https://gitter.im/ethereum/web3.js](https://badges.gitter.im/Join%20Chat.svg)](https://gitter.im/ethereum/web3.js?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
 
-This is the Ethereum compatible [JavaScript API](https://github.com/ethereum/wiki/wiki/JavaScript-API)
-which implements the [Generic JSON RPC](https://github.com/ethereum/wiki/wiki/JSON-RPC) spec. It's available on npm as a node module, for bower and component as an embeddable js and as a meteor.js package.
+This is the fork version of the Web3 API Ethereum compatible [JavaScript API](https://github.com/ethereum/wiki/wiki/JavaScript-API)
+which is extended to support the Quorum API.
 
 [![NPM version][npm-image]][npm-url] [![Build Status][travis-image]][travis-url] [![dependency status][dep-image]][dep-url] [![dev dependency status][dep-dev-image]][dep-dev-url] [![Coverage Status][coveralls-image]][coveralls-url] [![Stories in Ready][waffle-image]][waffle-url]
 
 <!-- [![browser support](https://ci.testling.com/ethereum/ethereum.js.png)](https://ci.testling.com/ethereum/ethereum.js) -->
 
-You need to run a local Ethereum node to use this library.
+You need to run a local Ethereum/Quorum node to use this library.
 
 [Documentation](https://github.com/ethereum/wiki/wiki/JavaScript-API)
 
@@ -30,26 +18,7 @@ You need to run a local Ethereum node to use this library.
 ### Node.js
 
 ```bash
-npm install web3
-```
-
-### Meteor.js
-
-```bash
-meteor add ethereum:web3
-```
-
-### As Browser module
-Bower
-
-```bash
-bower install web3
-```
-
-Component
-
-```bash
-component install ethereum/web3.js
+npm install web3-quorum
 ```
 
 * Include `web3.min.js` in your html file. (not required for the meteor package)
@@ -70,12 +39,24 @@ web3.setProvider(new web3.providers.HttpProvider('http://localhost:8545'));
 There you go, now you can use it:
 
 ```js
-var coinbase = web3.eth.coinbase;
-var balance = web3.eth.getBalance(coinbase);
+var nodeInfo = web3.quorum.nodeInfo;
+web3.quorum.getNodeInfo(function(error, result){
+    console.log(error, result);
+});
 ```
 
-You can find more examples in [`example`](https://github.com/ethereum/web3.js/tree/master/example) directory.
+Quorum functions
 
+```js
+web3.quorum.nodeInfo
+web3.quorum.isBlockMaker(address)
+web3.quorum.isVoter(address)
+web3.quorum.canonicalHash(blockHash)
+web3.quorum.makeBlock()
+web3.quorum.vote()
+web3.quorum.pauseBlockMaker()
+web3.quorum.resumeBlockMaker()
+```
 
 ## Contribute!
 

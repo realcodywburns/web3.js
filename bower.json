@@ -1,8 +1,8 @@
 {
-  "name": "web3",
+  "name": "web3-quorum",
   "namespace": "ethereum",
-  "version": "0.17.0-alpha",
-  "description": "Ethereum Compatible JavaScript API",
+  "version": "0.1.0",
+  "description": "Ethereum Quorum Compatible JavaScript API",
   "main": [
     "./dist/web3.js",
     "./dist/web3.min.js"
@@ -13,14 +13,15 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/ethereum/web3.js.git"
+    "url": "https://github.com/tdhman/web3.js.git"
   },
-  "homepage": "https://github.com/ethereum/web3.js",
+  "homepage": "https://github.com/tdhman/web3.js",
   "bugs": {
-    "url": "https://github.com/ethereum/web3.js/issues"
+    "url": "https://github.com/tdhman/web3.js/issues"
   },
   "keywords": [
     "ethereum",
+    "quorum",
     "javascript",
     "API"
   ],
