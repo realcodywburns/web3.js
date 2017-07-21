@@ -21,8 +21,6 @@ You need to run a local Ethereum/Quorum node to use this library.
 npm install web3-quorum
 ```
 
-* Include `web3.min.js` in your html file. (not required for the meteor package)
-
 ## Usage
 Use the `web3` object directly from global namespace:
 
