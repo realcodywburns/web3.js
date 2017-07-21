@@ -12,6 +12,7 @@ which is extended to support the Quorum API.
 You need to run a local Ethereum/Quorum node to use this library.
 
 [Documentation](https://github.com/ethereum/wiki/wiki/JavaScript-API)
+[Quorum API](https://github.com/jpmorganchase/quorum/blob/master/docs/api.md)
 
 ## Installation
 
